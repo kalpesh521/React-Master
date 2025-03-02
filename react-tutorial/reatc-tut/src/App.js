@@ -2,7 +2,7 @@
 
 function App() {
   return (
-   <h1>Kalpesh | Create react App</h1>
+   <h1>Kalpesh</h1>
   );
 }
 
