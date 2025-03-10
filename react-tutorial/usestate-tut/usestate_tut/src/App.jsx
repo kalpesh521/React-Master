@@ -4,7 +4,8 @@ import "./App.css";
 
 function App() {
   const [counter, setCount] = useState(10);
-  
+  const [user, setUser] = useState({"name":"kalpesh", "age":24});
+  const [text, setText] = useState("");
   const addValue =() =>{
     setCount(counter+1);
   }
@@ -19,6 +20,16 @@ function App() {
       <button onClick={addValue}>Add</button>
       <br />
       <button onClick={subtractValue} style={{marginTop:"20px"}}>Subtract</button>
+    <hr />
+      <h1>Age Calculator</h1>
+      <h2>{user.name}</h2>
+      <h2>{user.age}</h2>
+      <button onClick={()=>setUser({...user, age:user.age+1})}>Increase Age</button>
+      <button onClick={()=>setUser({...user, age:user.age-1})}>Decrease Age</button>
+    <hr />
+    <h1>Display Data</h1>
+    <input type="text" value={text} onChange={(e)=>setText(e.target.value)}/>
+    <h2>{text}</h2>
     </>
   );
 }
